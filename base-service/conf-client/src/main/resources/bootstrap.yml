@@ -1,0 +1,20 @@
+#####################################################################################################
+# 配置服务客户端Client应用入口（链接 ClientServer 测试）
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9003
+      profile: dev
+      label: master #当 ConfigServer 的后端存储的是 Git 的时候，默认就是 master
+
+  application:
+    name: conf-client  #取 foobar-refresh.yml 这个文件的 application 名字，即为 foobar 名称
+#    fail-fast: true
+#    username: user
+#    password: ${CONFIG_SERVER_PASSWORD:password}
+#    retry:
+#      initial-interval: 2000
+#      max-interval: 10000
+#      multiplier: 2
+#      max-attempts: 10
+#####################################################################################################
