@@ -90,8 +90,8 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.name}</imageName>
-					<dockerDirectory>src/main/docker</dockerDirectory>
+					<imageName>kaisagroup_plateform/${project.name}</imageName>
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>

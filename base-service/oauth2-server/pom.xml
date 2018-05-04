@@ -8,6 +8,7 @@
 	</parent>
 	<groupId>com.kaisagroup.plateform.service.base.oauth2</groupId>
 	<artifactId>oauth2-server</artifactId>
+	<name>kaisagroup_oauth2</name>
 
 	<dependencies>
 		<dependency>
@@ -116,7 +117,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.13</version>
+				<configuration>
+					<imageName>kaisagroup_plateform/${project.name}</imageName>
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
