@@ -1,0 +1,35 @@
+version: '2'
+services:
+  rabbitmq:
+      image: rabbitmq:3-management
+      restart: always
+      ports:
+        - 15673:15672
+  registry:
+    image: kaisagroup_plateform/registry
+    ports:
+      - "9003:9003"
+  config:
+    image: kaisagroup_plateform/config
+    ports:
+      - "8888:8888"
+  monitor:
+    image: kaisagroup_plateform/monitor
+    ports:
+      - "8040:8040"
+  zipkin:
+    image: kaisagroup_plateform/zipkin
+    ports:
+      - "9411:9411"
+  gateway:
+    image: kaisagroup_plateform/gateway
+    ports:
+      - "8060:8060"
+  auth-service:
+    image: kaisagroup_plateform/auth-service
+    ports:
+      - "5000:5000"
+#  testa-service:
+#    image: kaisagroup_micro/testa-service
+#  testb-service:
+#    image: kaisagroup_micro/testb-service
