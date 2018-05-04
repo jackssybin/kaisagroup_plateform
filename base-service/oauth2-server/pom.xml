@@ -122,13 +122,17 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
-					<imageName>kaisagroup_plateform/${project.name}</imageName>
+					<imageName>${docker.image.prefix}/${project.name}</imageName>
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<!--<imageTag>latest</imageTag>-->
+					</imageTags>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
 							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
+							<include>${project.name}.jar</include>
 						</resource>
 					</resources>
 				</configuration>
