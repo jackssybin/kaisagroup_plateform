@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.kaisagroup.plateform.service.msg</groupId>
 	<artifactId>msg-service</artifactId>
-	<name>messageServ</name>
+	<name>kaisagroup_msg</name>
 	<description>消息处理服务</description>
 
 	<properties>
@@ -175,12 +175,30 @@
 				<dependencies>
 					<!-- https://github.com/backkoms/mybatis-generator-comments -->
 					<dependency>
-						<groupId>com.zhishi.mybatis</groupId>
+						<groupId>com.kaisagroup.mybatis</groupId>
 						<artifactId>mybatis-generator-core</artifactId>
 						<version>1.0.1</version>
 					</dependency>
 				</dependencies>
 			</plugin>
+
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.13</version>
+				<configuration>
+					<imageName>${docker.image.prefix}/${project.name}</imageName>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>

@@ -6,29 +6,29 @@ services:
       ports:
         - 15673:15672
   registry:
-    image: kaisagroup_plateform/registry
+    image: kaisagroup_plateform/kaisagroup_eureka
     ports:
       - "9003:9003"
   config:
-    image: kaisagroup_plateform/config
+    image: kaisagroup_plateform/kaisagroup_conf
     ports:
-      - "8888:8888"
+      - "9004:9004"
   monitor:
-    image: kaisagroup_plateform/monitor
+    image: kaisagroup_plateform/kaisagroup_admin
     ports:
-      - "8040:8040"
+      - "9002:9002"
   zipkin:
-    image: kaisagroup_plateform/zipkin
+    image: kaisagroup_plateform/kaisagroup_sleuth
     ports:
-      - "9411:9411"
+      - "9001:9001"
   gateway:
-    image: kaisagroup_plateform/gateway
+    image: kaisagroup_plateform/kaisagroup_zuul
     ports:
-      - "8060:8060"
-  auth-service:
-    image: kaisagroup_plateform/auth-service
-    ports:
-      - "5000:5000"
+      - "9005:9005"
+#  auth-service:
+#    image: kaisagroup_plateform/auth-service
+#    ports:
+#      - "5000:5000"
 #  testa-service:
 #    image: kaisagroup_micro/testa-service
 #  testb-service:

@@ -12,6 +12,9 @@
 		<version>1.5.12.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	<properties>
+		<docker.image.prefix>kaisagroup_plateform</docker.image.prefix>
+	</properties>
 	<modules>
 		<module>base-service</module>
 		<module>common-module</module>
