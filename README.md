@@ -21,3 +21,11 @@
 #docker 命令
   mvn clean
   mvn package docker:build
+  
+  mvn clean package docker:build -e
+  
+  docker build -t kaisagroup_eureka:base -f /root/kaisagroup_plateform/base-service/eureka-server/src/main/docker/Dockerfile /root/kaisagroup_plateform/base-service/eureka-server
+
+sudo docker images |grep kaisagroup
+#git pull 分支名
+ git pull origin master:master
