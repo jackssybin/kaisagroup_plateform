@@ -17,3 +17,7 @@
 
 #banner 地址
   http://patorjk.com/software/taag/#p=display&f=Graffiti&t=kaisagroup%20plateform
+  
+#docker 命令
+  mvn clean
+  mvn package docker:build
