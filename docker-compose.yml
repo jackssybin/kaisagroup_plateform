@@ -5,24 +5,29 @@ services:
       restart: always
       ports:
         - 15673:15672
-  registry:
+  eureka:
     image: kaisagroup_plateform/kaisagroup_eureka
+    restart: always
     ports:
       - "9003:9003"
   config:
     image: kaisagroup_plateform/kaisagroup_conf
+    restart: always
     ports:
       - "9004:9004"
-  monitor:
+  sleuth:
+      image: kaisagroup_plateform/kaisagroup_sleuth
+      restart: always
+      ports:
+        - "9001:9001"
+  admin:
     image: kaisagroup_plateform/kaisagroup_admin
+    restart: always
     ports:
       - "9002:9002"
-  zipkin:
-    image: kaisagroup_plateform/kaisagroup_sleuth
-    ports:
-      - "9001:9001"
-  gateway:
+  zuul:
     image: kaisagroup_plateform/kaisagroup_zuul
+    restart: always
     ports:
       - "9005:9005"
 #  auth-service:
