@@ -1,5 +1,5 @@
 
-package com.kaisagroup.plateform.service.common.util;
+package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.common.util;
 /**
  * ClassName:SnowflakeIdWorker <br/>
  * Function: <br/>

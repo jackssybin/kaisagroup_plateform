@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.common.bean.account;
+package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.common.bean.account;
 
 import java.util.Date;
 
