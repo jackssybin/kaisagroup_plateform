@@ -3,7 +3,7 @@ spring:
     name: zuul-server
   cloud:
     config:
-      uri: http://config:9004
+      uri: http://localhost:9004
       fail-fast: true
       username: user
       password: ${CONFIG_SERVER_PASSWORD:password}
