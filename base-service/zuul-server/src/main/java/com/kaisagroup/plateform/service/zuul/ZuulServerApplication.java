@@ -1,18 +1,18 @@
-package com.kaisagroup.plateform.service.base.zipkin;
+package com.kaisagroup.plateform.service.zuul;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-/**
- */
+
 @SpringBootApplication
-@EnableZipkinStreamServer
 @EnableDiscoveryClient
-public class SleuthServerApplicaton {
+@EnableZuulProxy
+public class ZuulServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SleuthServerApplicaton.class, args);
+		SpringApplication.run(ZuulServerApplication.class, args);
 	}
 
 }
