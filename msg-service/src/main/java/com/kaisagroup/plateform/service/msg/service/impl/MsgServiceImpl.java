@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class MsgServiceImpl implements IMsgService {
 
 	@Autowired
-    MsgNoticeMapper msgNoticeMapper;
+	MsgNoticeMapper msgNoticeMapper;
 
 	@Override
 	public int addMsg(String serialNo, String msgType, String target, String content) {

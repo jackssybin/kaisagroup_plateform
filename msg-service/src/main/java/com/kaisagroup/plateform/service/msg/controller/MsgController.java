@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MsgController {
 
 	@Autowired
-    IMsgService msgService;
+	IMsgService msgService;
 
 	/**
 	 * 添加一条消息

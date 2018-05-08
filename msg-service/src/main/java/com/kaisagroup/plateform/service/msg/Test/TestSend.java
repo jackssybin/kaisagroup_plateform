@@ -2,7 +2,6 @@ package com.kaisagroup.plateform.service.msg.Test;
 
 
 import com.kaisagroup.plateform.service.msg.rabbitmq.Sender;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
