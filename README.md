@@ -19,7 +19,9 @@
   容器管理：
   http://47.92.105.79:9000/#/containers
   
-  
+#api向导
+	http://localhost:8024/swagger-ui.html#/
+	
 #docker 命令
   mvn clean
   mvn package docker:build
@@ -33,6 +35,7 @@ sudo docker images |grep kaisagroup
  
  git reset --hard
  git pull origin master:master
+  git pull origin dev
   git reset --hard &  git pull origin master:master
 #docker-compose 安装
 1、安装python-pip

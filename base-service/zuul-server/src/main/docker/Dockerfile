@@ -1,6 +1,6 @@
 FROM java:8
 VOLUME /tmp
-ADD kaisagroup_zuul.jar /app.jar
-RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ADD kaisagroup_zuul.jar /kaisagroup_zuul.jar
+RUN bash -c 'touch /kaisagroup_zuul.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/kaisagroup_zuul.jar"]
 EXPOSE 9005
