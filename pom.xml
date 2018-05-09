@@ -14,13 +14,74 @@
 	</parent>
 	<properties>
 		<docker.image.prefix>kaisagroup_plateform</docker.image.prefix>
+		<spring.cloud.version>Dalston.RELEASE</spring.cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<docker.plugin.version>0.4.13</docker.plugin.version>
+		<spring-boot-admin.version>1.5.0</spring-boot-admin.version>
 	</properties>
 	<modules>
 		<module>base-service</module>
 		<module>common-module</module>
+		<module>business-service</module>
 		<module>msg-service</module>
         <module>test-service</module>
     </modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>asm</artifactId>
+					<groupId>org.ow2.asm</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-turbine</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-login</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<finalName>${project.name}</finalName>

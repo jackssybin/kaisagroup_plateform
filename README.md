@@ -1,22 +1,24 @@
 # QuickStart
 	base-service，提供基础服务，包括路由，链路跟踪，配置中心等等
-	msg-service 8084，消息处理，采用kafaka异步消费
-
-
+	
 	sleuth server:9001
 	admin server :9002
 	eureka server:9003
 	cofig server :9004
+	zuul server :9005
 	
-	account-service:8080
-	product-service:8081
-	payment-service:8082
-	order-service  :8083
-	msg-service    :8084
-	front-app      :8088
+	account-service:8021
+	msg-service    :8022
+	front-app      :8023
 
 #banner 地址
   http://patorjk.com/software/taag/#p=display&f=Graffiti&t=kaisagroup%20plateform
+
+  
+#地址信息
+  容器管理：
+  http://47.92.105.79:9000/#/containers
+  
   
 #docker 命令
   mvn clean
@@ -31,7 +33,7 @@ sudo docker images |grep kaisagroup
  
  git reset --hard
  git pull origin master:master
- 
+  git reset --hard &  git pull origin master:master
 #docker-compose 安装
 1、安装python-pip
  
