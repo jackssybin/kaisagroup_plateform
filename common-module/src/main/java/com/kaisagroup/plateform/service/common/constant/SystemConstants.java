@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.common.constant;
+package com.kaisagroup.plateform.service.common.constant;
 
 /**
  * 系统常量

@@ -1,11 +1,11 @@
 
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.common.bean;
+package com.kaisagroup.plateform.service.common.bean;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.common.constant.SystemConstants;
+import com.kaisagroup.plateform.service.common.constant.SystemConstants;
 
 /**
  * ClassName:RestAPIResulut <br/>
