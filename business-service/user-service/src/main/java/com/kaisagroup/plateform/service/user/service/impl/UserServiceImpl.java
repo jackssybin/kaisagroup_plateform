@@ -1,5 +1,6 @@
 package com.kaisagroup.plateform.service.user.service.impl;
 
+import com.kaisagroup.plateform.common.util.UUIDUtils;
 import com.kaisagroup.plateform.service.user.bean.User;
 import com.kaisagroup.plateform.service.user.bean.UserExample;
 import com.kaisagroup.plateform.service.user.mapper.UserMapper;
@@ -47,6 +48,7 @@ public class UserServiceImpl implements IUserService{
         User user = new User();
         user.setPassword(password);
         user.setPhone(phone);
+        user.setTid(UUIDUtils.getUUID());
         int result = userMapper.insertSelective(user);
         logger.info("{}注册成功！",phone);
         return result > 0 ? true : false;
@@ -71,4 +73,16 @@ public class UserServiceImpl implements IUserService{
     public int saveUser(User user) {
         return userMapper.insert(user);
     }
+
+    @Override
+    public int updateUser(User record) {
+        return userMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateUserByPrimaryKey(User record) {
+        return userMapper.updateByPrimaryKey(record);
+    }
+
+
 }

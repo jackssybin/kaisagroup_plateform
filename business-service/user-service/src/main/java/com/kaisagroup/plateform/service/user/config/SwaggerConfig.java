@@ -27,8 +27,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring Boot中使用Swagger2构建RESTful APIs")
-                .description("Spring Boot中使用Swagger2构建RESTful APIs")
+                .title("赢佳金融 api调试")
+//                .description("赢佳金融 api调试")
                 .termsOfServiceUrl("http://www.baidu.com/")
                 .version("1.0")
                 .build();

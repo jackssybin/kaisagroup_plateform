@@ -32,6 +32,10 @@ public interface IUserService {
 
     int saveUser(User user);
 
+    int updateUser(User record);
+
+    int updateUserByPrimaryKey(User record);
+
 
 
 
