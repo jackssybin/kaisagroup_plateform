@@ -32,7 +32,6 @@ services:
       - "9005:9005"
   user:
     image: kaisagroup_plateform/kaisagrop_user
-    restart: always
     ports:
       - "8024:8024"
 #  auth-service:

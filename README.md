@@ -21,7 +21,7 @@
   
 #api向导
 	http://localhost:8024/swagger-ui.html#/
-	
+	http://47.92.105.79:8024/swagger-ui.html#/
 #docker 命令
   mvn clean
   mvn package docker:build

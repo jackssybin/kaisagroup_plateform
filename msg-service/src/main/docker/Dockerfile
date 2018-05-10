@@ -1,6 +1,6 @@
 FROM java:8
 VOLUME /tmp
-ADD kaisagroup_msg.jar /app.jar
-RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ADD kaisagroup_msg.jar /kaisagroup_msg.jar
+RUN bash -c 'touch /kaisagroup_msg.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/kaisagroup_msg.jar"]
 EXPOSE 8081

@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.kaisagroup.plateform.service.base.conf</groupId>
-	<artifactId>conf-server</artifactId>
+	<artifactId>kaisagroup_conf</artifactId>
 	<name>kaisagroup_conf</name>
 
 	<properties>
@@ -66,7 +66,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.name}</imageName>
+					<imageName>${project.name}</imageName>
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>

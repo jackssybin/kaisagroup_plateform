@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.kaisagroup.plateform.service.base.admin</groupId>
-	<artifactId>admin-server</artifactId>
+	<artifactId>kaisagroup_admin</artifactId>
 	<name>kaisagroup_admin</name>
 	<description>服务监控</description>
 
@@ -64,7 +64,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.name}</imageName>
+					<imageName>${project.name}</imageName>
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>

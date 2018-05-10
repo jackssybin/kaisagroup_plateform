@@ -7,7 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.kaisagroup.plateform.service.base.eureka</groupId>
-	<artifactId>eureka-server</artifactId>
+	<artifactId>kaisagroup_eureka</artifactId>
 	<name>kaisagroup_eureka</name>
 
 	<properties>
@@ -51,7 +51,7 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.13</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.name}</imageName>
+					<imageName>${project.name}</imageName>
 					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>
