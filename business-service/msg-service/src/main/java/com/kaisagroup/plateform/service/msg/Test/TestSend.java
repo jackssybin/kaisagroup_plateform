@@ -12,8 +12,8 @@ import javax.annotation.Resource;
  * Created by jackssy on 2018/4/4.
  */
 
-@Component
-@EnableScheduling
+//@Component
+//@EnableScheduling
 //@Async("mySimpleAsync")
 public class TestSend {
 
