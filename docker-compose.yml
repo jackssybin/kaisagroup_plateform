@@ -7,22 +7,18 @@ services:
         - 15673:15672
   eureka:
       image: kaisagroup_eureka
-      restart: always
       ports:
         - "9003:9003"
   config:
       image: kaisagroup_conf
-      restart: always
       ports:
         - "9004:9004"
   sleuth:
       image: kaisagroup_sleuth
-      restart: always
       ports:
         - "9001:9001"
   admin:
       image: kaisagroup_admin
-      restart: always
       ports:
         - "9002:9002"
   kaisagroup_zuul:
