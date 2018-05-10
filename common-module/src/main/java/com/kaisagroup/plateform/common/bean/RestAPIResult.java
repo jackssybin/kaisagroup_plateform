@@ -1,18 +1,17 @@
 
-package com.kaisagroup.plateform.service.common.bean;
+package com.kaisagroup.plateform.common.bean;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.kaisagroup.plateform.service.common.constant.SystemConstants;
+import com.kaisagroup.plateform.common.constant.SystemConstants;
 
 /**
  * ClassName:RestAPIResulut <br/>
  * Function: REST API接口统一响应接口实体. <br/>
  * Date: 2017年8月16日 下午15:25:04 <br/>
  * 
- * @author guooo
  * @version
  * @since JDK 1.6
  * @see

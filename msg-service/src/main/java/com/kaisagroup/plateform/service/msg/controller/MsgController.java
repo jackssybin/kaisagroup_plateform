@@ -1,6 +1,6 @@
 package com.kaisagroup.plateform.service.msg.controller;
 
-import com.kaisagroup.plateform.service.common.bean.RestAPIResult;
+import com.kaisagroup.plateform.common.bean.RestAPIResult;
 import com.kaisagroup.plateform.service.msg.service.IMsgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

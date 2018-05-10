@@ -1,11 +1,9 @@
 
-package com.kaisagroup.plateform.service.common.util;
+package com.kaisagroup.plateform.common.util;
 /**
  * ClassName:SnowflakeIdWorker <br/>
  * Function: <br/>
- * Date:     2017年4月7日 下午3:56:11 <br/>
- * @author   guooo
- * @version  
+ * @version
  * @since    JDK 1.6
  * @see 	 
  */

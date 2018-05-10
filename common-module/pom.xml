@@ -6,7 +6,7 @@
 		<artifactId>plateform</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.kaisagroup.plateform.service.common</groupId>
+	<groupId>com.kaisagroup.plateform.service</groupId>
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
 	<version>0.0.1-SNAPSHOT</version>

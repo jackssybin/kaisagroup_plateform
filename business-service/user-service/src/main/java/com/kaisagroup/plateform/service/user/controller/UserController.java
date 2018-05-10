@@ -2,14 +2,13 @@ package com.kaisagroup.plateform.service.user.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.kaisagroup.plateform.service.common.constant.SystemConstants;
+import com.kaisagroup.plateform.common.constant.SystemConstants;
 import com.kaisagroup.plateform.service.user.bean.User;
 import com.kaisagroup.plateform.service.user.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 /**
