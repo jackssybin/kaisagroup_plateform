@@ -24,7 +24,7 @@ services:
   kaisagroup_zuul:
       image: kaisagroup_zuul
       ports:
-        - "9005:9005"
+        - "9010:9010"
   user:
       image: kaisagrop_user
       ports:
