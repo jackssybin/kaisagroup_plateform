@@ -10,6 +10,7 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by jackssy on 2018/5/10.
  */
 @RestController
-@RequestMapping("/user/msg")
+@RequestMapping("/userMsg")
 @Slf4j
 public class UserMessageController {
 
@@ -43,19 +44,20 @@ public class UserMessageController {
      * @param password
      * @return
      */
-    @RequestMapping(value = "sentRibbon", method = RequestMethod.GET)
-    public BaseResp sentRibbon(String phone, String password) {
+    @RequestMapping(value = "sentRibbonMsg", method = RequestMethod.GET)
+    public BaseResp sentRibbonMsg(@RequestParam("phone") String phone, @RequestParam("password") String password  ) {
 
         ServiceInstance serviceInstance = this.loadBalancerClient.choose(msgRibbonService);
         log.info("===" + ":" + serviceInstance.getServiceId() + ":" + serviceInstance.getHost() + ":" + serviceInstance.getPort());// 打印当前调用服务的信息
-        BaseResp resp = this.restTemplate.getForObject("http://"+msgRibbonService+"/msg/ping" , BaseResp.class);
+        String restUrl="http://"+msgRibbonService+"/msg/pingUserPwd/121212121/aaaa";
+        BaseResp resp = this.restTemplate.getForObject(restUrl , BaseResp.class);
         return resp;
     }
 
-    @RequestMapping(value = "sentFeign", method = RequestMethod.GET)
-    public BaseResp sentFeign(String phone) {
+    @RequestMapping(value = "sendFeignMsg", method = RequestMethod.GET)
+    public BaseResp sendFeignMsg(@RequestParam("phone") String phone) {
         BaseResp resp = new BaseResp();
-        resp.setErrorMessage(serviceMsgClient.sendMsg());
+        resp.setErrorMessage(serviceMsgClient.sendFeignMsg(phone));
 
         return resp;
     }

@@ -4,10 +4,7 @@ import com.kaisagroup.plateform.common.web.BaseResp;
 import com.kaisagroup.plateform.service.msg.service.IMsgService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/msg")
@@ -34,16 +31,41 @@ public class MsgController {
 	}
 
 	@RequestMapping(value = "ping")
-	public BaseResp ping() {
+	public BaseResp ping(String phone) {
 		BaseResp resp = new BaseResp();
-		resp.setErrorMessage("ok");
-		log.info("我来了 ping");
+		resp.setErrorMessage("ok"+phone);
+		log.info("我来了 ping ribbon"+phone);
 		return resp;
 	}
 
-	@RequestMapping(value = "/sendMsg",method = {RequestMethod.POST, RequestMethod.GET})
+
+
+	@RequestMapping(value="/pingRibbon",method=RequestMethod.GET)
+	public BaseResp pingRibbon(@RequestParam("username") String username,@RequestParam("password") String password) {
+		BaseResp resp = new BaseResp();
+		log.info("username is:"+username);
+		log.info("password is:"+password);
+		return resp;
+	}
+
+	/**
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	@RequestMapping(value="/pingUserPwd/{username}/{password}",method=RequestMethod.GET)
+	public BaseResp pingUserPwd(@PathVariable String username, @PathVariable String password) {
+		log.info("username is:"+username);
+		log.info("password is:"+password);
+		BaseResp resp = new BaseResp();
+		resp.setErrorMessage("ok"+username+password);
+		log.info("我来了 ping ribbon"+username);
+		return resp;
+	}
+
+	@RequestMapping(value = "/sendFeignMsg",method = {RequestMethod.POST, RequestMethod.GET})
 	@ResponseBody
-	public String sendMsg() {
-		return  "===>Say ";
+	public String sendMsg(@RequestParam("phone") String phone) {
+		return  "feign===>receive "+phone;
 	}
 }
