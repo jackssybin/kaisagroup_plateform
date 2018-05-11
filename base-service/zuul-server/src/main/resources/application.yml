@@ -18,12 +18,17 @@ ribbon:
   ConnectTimeout: 10000
 
 zuul:
-  ignoredServices: '*'
+  ignoredServices: '*' #填写忽略的服务 ignoredServices:服务名 #ignored-services: user-service # 需要忽视的服务(配置后将不会被路由)
   routes:
     msg-service:
       path: /msg/**
       stripPrefix: false
       sensitiveHeaders:
+    user-service:
+      path: /user/**
+      stripPrefix: false
+      sensitiveHeaders:
+
 
 spring:
   mvc:
