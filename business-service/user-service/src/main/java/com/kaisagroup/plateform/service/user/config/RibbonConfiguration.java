@@ -21,17 +21,16 @@ public class RibbonConfiguration {
     @LoadBalanced //负载全靠他了
     public RestTemplate restTemplate(){return new RestTemplate();};
 
-    @Autowired
-    private SpringClientFactory springClientFactory;
+/*    @Autowired
+    private SpringClientFactory springClientFactory;*/
 
     /**
      * RandomRule 随机策略
      * RoundRobinRule 轮询策咯
      * BestAvailableRule 最少并发数策略
      * @return
-     */
     @Bean
     public IRule ribbonRule() {
-        return new BestAvailableRule();
-    }
+        return new RandomRule();
+    }*/
 }
