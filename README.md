@@ -37,6 +37,9 @@
   docker build -t kaisagroup_eureka:base -f /root/kaisagroup_plateform/base-service/eureka-server/src/main/docker/Dockerfile /root/kaisagroup_plateform/base-service/eureka-server
 
 sudo docker images |grep kaisagroup
+
+    #启动网关
+sudo docker run -p 9011:9011 --name kaisgroup_zuul -d kaisagroup_zuul:latest
 #git pull 分支名
  
  git reset --hard
@@ -72,3 +75,16 @@ sudo docker images |grep kaisagroup
  在Spring Cloud Ribbon 与 Spring Cloud Eureka结合工程中，我们可以通过参数配置方式来禁用Eureka对Ribbon服务实例的维护实现。
  
  ribbon.eureka.enabled=fa
+ 
+ 
+ 
+ 
+ 
+ 
+ #定时任务拆分
+ ！！！
+ #日志输出保存位置
+ !!!!
+ #
+ 
+ 
