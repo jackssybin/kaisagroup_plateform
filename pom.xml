@@ -24,8 +24,7 @@
 		<module>base-service</module>
 		<module>common-module</module>
 		<module>business-service</module>
-		<module>msg-service</module>
-        <module>test-service</module>
+		<module>test-service</module>
     </modules>
 
 	<dependencies>
