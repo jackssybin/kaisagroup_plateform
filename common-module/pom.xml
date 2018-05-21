@@ -10,6 +10,7 @@
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<dependencies>
 		<dependency>
@@ -125,9 +126,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+				<!--<configuration>
 					<classifier>exec</classifier>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>-->
 			</plugin>
 			<!--<plugin>
 				<groupId>com.spotify</groupId>
