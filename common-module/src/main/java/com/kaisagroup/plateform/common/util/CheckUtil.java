@@ -1,6 +1,6 @@
 package com.kaisagroup.plateform.common.util;
 
-import com.guohuai.component.exception.AMPException;
+import com.kaisagroup.plateform.common.exception.KAISAException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,7 +19,7 @@ public class CheckUtil {
 	 */
 	public static void checkParams(String param, int errorCode){
 		if (param == null || "".equals(param)) {
-			throw new AMPException(errorCode);
+			throw new KAISAException(errorCode);
 		}
 	}
 	
@@ -37,7 +37,7 @@ public class CheckUtil {
 		Pattern p = Pattern.compile("^1[3|4|5|7|8][0-9]{9}$");
 		Matcher m = p.matcher(mobile);
 		if (!m.matches()) {
-			throw new AMPException(errorCode2);
+			throw new KAISAException(errorCode2);
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class CheckUtil {
 		Pattern p = Pattern.compile("^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()-_+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]){" + begLen + "," + endLen + "}$");
 		Matcher m = p.matcher(password);
 		if (!m.matches()) {
-			throw new AMPException(errorCode2);
+			throw new KAISAException(errorCode2);
 		}
 	}
 	
@@ -78,7 +78,7 @@ public class CheckUtil {
 		Pattern p = Pattern.compile("^\\d{" + begLen + "," + endLen + "}$");
 		Matcher m = p.matcher(param);
 		if (!m.matches()) {
-			throw new AMPException(errorCode2);
+			throw new KAISAException(errorCode2);
 		}
 	}
 	
@@ -92,7 +92,7 @@ public class CheckUtil {
 		Pattern p = Pattern.compile("^\\d{17}(\\d|X)$");
 		Matcher m = p.matcher(param);
 		if (!m.matches()) {
-			throw new AMPException(errorCode1);
+			throw new KAISAException(errorCode1);
 		}
 	}
 	
@@ -110,7 +110,7 @@ public class CheckUtil {
 		Pattern p = Pattern.compile("^\\d{16,19}$");
 		Matcher m = p.matcher(param);
 		if (!m.matches()) {
-			throw new AMPException(errorCode1);
+			throw new KAISAException(errorCode1);
 		}
 	}
 	

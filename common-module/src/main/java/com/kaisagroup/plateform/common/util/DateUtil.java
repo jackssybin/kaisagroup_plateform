@@ -1,7 +1,6 @@
 package com.kaisagroup.plateform.common.util;
 
-import com.guohuai.component.exception.AMPException;
-import com.guohuai.mmp.platform.StaticProperties;
+import com.kaisagroup.plateform.common.exception.KAISAException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
@@ -96,7 +95,7 @@ public class DateUtil {
 		try {
 			return new SimpleDateFormat(pattern).parse(date);
 		} catch (ParseException e) {
-			throw new AMPException(e);
+			throw new KAISAException(e);
 		}
 	}
 
@@ -113,8 +112,8 @@ public class DateUtil {
 	/**
 	 * 格式化 sql date
 	 * 
-	 * @param date
-	 * @param pattern
+	 * @param {}date
+	 * @param {}pattern
 	 * @return
 	 */
 	public static String format(java.sql.Date sqlDate) {
@@ -125,8 +124,8 @@ public class DateUtil {
 	/**
 	 * 将字符串转换成默认格式（XXXX-XX-XX）的sql date
 	 * 
-	 * @param date
-	 * @param pattern
+	 * @param {}date
+	 * @param {}pattern
 	 * @return
 	 */
 	public static java.sql.Date parseToSqlDate(String date) {
@@ -134,7 +133,7 @@ public class DateUtil {
 			Date sdate = new SimpleDateFormat(datePattern).parse(date);
 			return new java.sql.Date(sdate.getTime());
 		} catch (ParseException e) {
-			throw new AMPException(e);
+			throw new KAISAException(e);
 		}
 	}
 
@@ -344,9 +343,9 @@ public class DateUtil {
 	/**
 	 * 获取两个时间的时间间隔
 	 * 
-	 * @param beginDate
+	 * @param {}beginDate
 	 *            开始时间
-	 * @param endDate
+	 * @param {}endDate
 	 *            结束时间
 	 * @return
 	 */
@@ -375,7 +374,7 @@ public class DateUtil {
 	/**
 	 * 获取当前日期 格式:XXXX-XX-XX
 	 * 
-	 * @param date
+	 * @param {}date
 	 * @return
 	 */
 	public static Date getCurrDate() {
@@ -393,7 +392,7 @@ public class DateUtil {
 	/**
 	 * 获取当前日期 格式:XXXX-XX-XX
 	 * 
-	 * @param date
+	 * @param {}date
 	 * @return
 	 */
 	public static Date getCurrDate(Timestamp time) {
@@ -804,7 +803,7 @@ public class DateUtil {
 			String s = t.format(f.parse(date));
 			return s;
 		} catch (ParseException e) {
-			throw new AMPException(e);
+			throw new KAISAException(e);
 		}
 	}
 
@@ -927,7 +926,7 @@ public class DateUtil {
 	/**
 	 * 格式化指定日期为yyyyMMddHH格式
 	 * 
-	 * @param date
+	 * @param {}date
 	 * @return
 	 */
 	public static String defaultDateHourFormat() {
@@ -1315,7 +1314,7 @@ public class DateUtil {
         try {
 			return sdf.parse(timeStr).getTime();
 		} catch (ParseException e) {
-			throw new AMPException(e);
+			throw new KAISAException(e);
 		}
     }
 
