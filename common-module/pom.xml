@@ -10,7 +10,7 @@
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
 	<version>0.0.2-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
