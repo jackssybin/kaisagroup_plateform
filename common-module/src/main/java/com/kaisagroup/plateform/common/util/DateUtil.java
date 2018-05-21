@@ -1321,5 +1321,9 @@ public class DateUtil {
 	public static long getCurrentTime() {
         return getLong(sdf.format(new Date()));
     }
-    
+
+
+    public static void main(String[] args){
+
+	}
 }

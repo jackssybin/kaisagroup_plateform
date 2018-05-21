@@ -6,6 +6,7 @@
 		<artifactId>plateform</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<groupId>com.kaisagroup.plateform.service</groupId>
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
@@ -116,7 +117,7 @@
 		</dependency>
 	</dependencies>
 
-	<!--<build>
+	<build>
 		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
@@ -127,10 +128,10 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>-->
+	</build>
 
 
-	<build>
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -167,7 +168,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
 
 	<distributionManagement>
 		<repository>
