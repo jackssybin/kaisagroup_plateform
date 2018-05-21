@@ -79,10 +79,10 @@ public class DesPlus {
 		return hexString.toString();
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String var = encrypt("123456");
 //		System.out.println(var + ":" + var.length());
 //		System.out.println(decrypt(var));
-	}
+	}*/
 
 }

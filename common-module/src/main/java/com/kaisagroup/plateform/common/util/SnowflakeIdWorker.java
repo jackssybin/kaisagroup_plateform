@@ -128,17 +128,7 @@ public class SnowflakeIdWorker {
         return System.currentTimeMillis();
     }
 
-    //==============================Test=============================================
-    /** 测试 */
-    public static void main(String[] args) {
-        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
-        for (int i = 0; i < 1000; i++) {
-            long id = idWorker.nextId();
-            System.out.println(id);
-        }
-    }
-    
-    public static long generateSerialNos(){
+  public static long generateSerialNos(){
     	SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
     	return idWorker.nextId();
     }

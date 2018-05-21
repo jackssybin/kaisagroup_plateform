@@ -59,8 +59,8 @@ public class FileUtil {
 		return false;
 	}
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		deleteFiles("D:\\unix111", false);
 		deleteFiles("D:\\unix222", true);
-	}
+	}*/
 }
