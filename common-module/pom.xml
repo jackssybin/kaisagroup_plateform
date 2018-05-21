@@ -9,7 +9,7 @@
 	<groupId>com.kaisagroup.plateform.service</groupId>
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<dependencies>
