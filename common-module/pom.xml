@@ -9,7 +9,7 @@
 	<groupId>com.kaisagroup.plateform.service</groupId>
 	<artifactId>common-module</artifactId>
 	<name>common-module</name>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -82,8 +82,6 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -116,8 +114,6 @@
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
@@ -126,37 +122,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!--<configuration>
+				<configuration>
 					<classifier>exec</classifier>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>-->
 			</plugin>
-			<!--<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.13</version>
-				<configuration>
-					<imageName>${docker.image.prefix}/${project.name}</imageName>
-					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-					<imageTags>
-						<imageTag>${project.version}</imageTag>
-						&lt;!&ndash;<imageTag>latest</imageTag>&ndash;&gt;
-					</imageTags>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.name}.jar</include>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>-->
 		</plugins>
 	</build>
 </project>
