@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.user.config;
+package com.kaisagroup.plateform.service.mail.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.kaisagroup.plateform.service.user.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.kaisagroup.plateform.service.mail.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

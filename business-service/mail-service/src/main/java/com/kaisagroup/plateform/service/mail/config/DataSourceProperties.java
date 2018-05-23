@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.user.config;
+package com.kaisagroup.plateform.service.mail.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

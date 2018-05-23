@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.user.config;
+package com.kaisagroup.plateform.service.mail.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.slf4j.Logger;

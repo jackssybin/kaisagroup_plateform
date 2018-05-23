@@ -1,6 +1,4 @@
-package com.kaisagroup.plateform.service.user.config;
-
-import javax.sql.DataSource;
+package com.kaisagroup.plateform.service.mail.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -15,9 +13,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.kaisagroup.plateform.service.user.mapper")
+@MapperScan("com.kaisagroup.plateform.service.mail.mapper")
 public class SqlSessionFactoryConfig implements TransactionManagementConfigurer {
 
     @Autowired
