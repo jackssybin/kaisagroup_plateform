@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.fanout;
+package com.kaisagroup.plateform.service.rabbitmq.fanout;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

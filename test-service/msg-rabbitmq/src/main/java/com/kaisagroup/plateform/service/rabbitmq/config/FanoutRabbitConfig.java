@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.config;
+package com.kaisagroup.plateform.service.rabbitmq.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

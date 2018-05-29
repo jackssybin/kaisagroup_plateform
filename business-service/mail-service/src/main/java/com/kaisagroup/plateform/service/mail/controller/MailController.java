@@ -6,14 +6,12 @@ package com.kaisagroup.plateform.service.mail.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.kaisagroup.plateform.common.util.BeanUtilExt;
-import com.kaisagroup.plateform.common.util.DateUtil;
-import com.kaisagroup.plateform.common.util.RedisUtil;
-import com.kaisagroup.plateform.common.util.StringUtil;
+import com.kaisagroup.plateform.common.util.*;
 import com.kaisagroup.plateform.common.web.BaseResp;
 import com.kaisagroup.plateform.service.mail.bean.*;
 import com.kaisagroup.plateform.service.mail.constant.RedisConstant;
 import com.kaisagroup.plateform.service.mail.service.IMailService;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +48,8 @@ public class MailController {
     @Autowired
     private IMailService mailService;
 
-    @RequestMapping(value = "sendEmailTest", method = {RequestMethod.GET,RequestMethod.POST})
+    @ApiOperation("发送邮件测试")
+    @RequestMapping(value = "sendEmailTest", method = {RequestMethod.POST})
     public BaseResp sendEmailTest()
     {
         BaseResp resp = new BaseResp();
@@ -99,7 +98,8 @@ public class MailController {
         return resp;
     }
 
-    @RequestMapping(value = "sendEmailDetailTest", method = {RequestMethod.GET,RequestMethod.POST})
+    @ApiOperation("发送详细邮件测试")
+    @RequestMapping(value = "sendEmailDetailTest", method = {RequestMethod.POST})
     public BaseResp sendEmailDetailTest(String emailFromUser,
                                     String emailToUser,
                                     String emailCcUser,
@@ -128,7 +128,8 @@ public class MailController {
         return resp;
     }
 
-    @RequestMapping(value = "sendEmailByTemplate", method = {RequestMethod.GET,RequestMethod.POST})
+    /*@ApiOperation("发送详细邮件测试")
+    @RequestMapping(value = "sendEmailByTemplate", method = {RequestMethod.GET,RequestMethod.POST})*/
     public BaseResp sendEmailByTemplate(String templateId,String receiveParam)
     {
         BaseResp resp = new BaseResp();
@@ -151,12 +152,14 @@ public class MailController {
         return resp;
     }
 
-    @RequestMapping(value = "sendEmail", method = {RequestMethod.GET,RequestMethod.POST})
+    @ApiOperation("发送邮件")
+    @RequestMapping(value = "sendEmail",method = {RequestMethod.POST})
     public BaseResp sendEmail(String emailId,String receiveParam)
     {
         BaseResp resp = new BaseResp();
         int sendState =0;//失败
         EmailLog emailLog = new EmailLog();
+        emailLog.setTid(UUIDUtils.getUUID());
         emailLog.setState(sendState);
         try
         {
@@ -186,11 +189,18 @@ public class MailController {
                     resp.setErrorMessage("不存在的邮件模板id"+email.getTemplateId());
                 }else{
                     String subject =template.getSubject();
-                    String[] params=receiveParam.split(",");
-                    subject=replaceComStrArr(subject,params);//邮件标题
-                    message.setSubject(subject);
                     String content = template.getTextContent();
-                    content=replaceComStrArr(content,params);//邮件内容
+                    if(StringUtils.isEmpty(receiveParam)){
+                        if(StringUtils.isNotEmpty(email.getReceiveParam())){
+                            receiveParam=email.getReceiveParam();
+                        }
+                    }
+                    if(StringUtils.isNotEmpty(receiveParam)){
+                        String[] params=receiveParam.split(",");
+                        subject=replaceComStrArr(subject,params);//邮件标题
+                        content=replaceComStrArr(content,params);//邮件内容
+                    }
+                    message.setSubject(subject);
                     message.setText(content,Boolean.valueOf(template.getIsHtml()));
                     this.mailSender.send(mimeMessage);
                     sendState=1;
@@ -203,25 +213,35 @@ public class MailController {
         }
         catch(Exception ex)
         {
-            sendState=0;
+            emailLog.setState(sendState);
             resp.setErrorCode(-1);
             resp.setErrorMessage("发送邮件错误"+ex.getMessage());
+            emailLog.setErrorDetail(ex.getMessage());
         }
         emailLog.setCreateDate(DateUtil.getCurrDate());
-        emailLog.setCreateBy("");
+        emailLog.setCreateBy("needUserName");
+        log.info("emailLog:"+emailLog.toString());
         mailService.saveEmailLog(emailLog);
         return resp;
     }
 
 
-    @RequestMapping(value = "saveMail", method = {RequestMethod.GET,RequestMethod.POST})
+    @ApiOperation("保存邮件")
+    @RequestMapping(value = "saveMail", method = {RequestMethod.POST})
     public BaseResp saveMail(Email email)
     {
+        if(null!=email&&StringUtils.isEmpty(email.getTid())){
+            email.setTid(UUIDUtils.getUUID());
+            email.setCreateBy("needUserName");
+            email.setCreateDate(DateUtil.getCurrDate());
+        }
+        email.setUpdateDate(DateUtil.getCurrDate());
         mailService.saveEmail(email);
         return new BaseResp();
     }
 
-    @RequestMapping(value = "getMailList/{start}/{size}",method={RequestMethod.POST,RequestMethod.GET})
+    @ApiOperation("获取邮件列表")
+    @RequestMapping(value = "getMailList/{start}/{size}",method={RequestMethod.GET})
     public @ResponseBody
     PageInfo<Email> getMailList(@PathVariable("start")int start, @PathVariable("size")int size){
         PageHelper.startPage(start,size);
@@ -232,7 +252,8 @@ public class MailController {
         return pageInfo ;
     }
 
-    @RequestMapping(value = "getMailLogList/{start}/{size}",method={RequestMethod.POST,RequestMethod.GET})
+    @ApiOperation("获取邮件日志列表")
+    @RequestMapping(value = "getMailLogList/{start}/{size}",method={RequestMethod.GET})
     public @ResponseBody
     PageInfo<EmailLog> getMailLogList(@PathVariable("start")int start, @PathVariable("size")int size){
         PageHelper.startPage(start,size);
@@ -243,7 +264,8 @@ public class MailController {
         return pageInfo ;
     }
 
-    @RequestMapping(value = "getMailTemplateList/{start}/{size}",method={RequestMethod.POST,RequestMethod.GET})
+    @ApiOperation("获取邮件模板列表")
+    @RequestMapping(value = "getMailTemplateList/{start}/{size}",method={RequestMethod.GET})
     public @ResponseBody
     PageInfo<EmailTemplate> getMailTemplateList(@PathVariable("start")int start, @PathVariable("size")int size){
         PageHelper.startPage(start,size);

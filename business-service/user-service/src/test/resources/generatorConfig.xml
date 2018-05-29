@@ -60,7 +60,7 @@
             是否生成 example类 -->
 
         <table schema="kaisagroup_micro_account" tableName="tb_acc_user"
-               domainObjectName="User" enableCountByExample="false"
+               domainObjectName="UserTest" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true"
                enableUpdateByExample="false">
         </table>

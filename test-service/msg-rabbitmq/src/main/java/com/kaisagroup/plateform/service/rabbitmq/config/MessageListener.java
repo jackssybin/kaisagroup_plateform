@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.config;
+package com.kaisagroup.plateform.service.rabbitmq.config;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;

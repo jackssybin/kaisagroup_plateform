@@ -1,9 +1,9 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.Test;
+package com.kaisagroup.plateform.service.rabbitmq.Test;
 
 
 
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.hello.HelloSender;
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.model.User;
+import com.kaisagroup.plateform.service.rabbitmq.hello.HelloSender;
+import com.kaisagroup.plateform.service.rabbitmq.model.User;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;

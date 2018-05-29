@@ -1,6 +1,6 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.object;
+package com.kaisagroup.plateform.service.rabbitmq.object;
 
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.model.User;
+import com.kaisagroup.plateform.service.rabbitmq.model.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

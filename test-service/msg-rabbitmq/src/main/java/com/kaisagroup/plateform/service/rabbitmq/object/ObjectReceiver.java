@@ -1,8 +1,8 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.object;
+package com.kaisagroup.plateform.service.rabbitmq.object;
 
 
 
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.model.User;
+import com.kaisagroup.plateform.service.rabbitmq.model.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 
 /*

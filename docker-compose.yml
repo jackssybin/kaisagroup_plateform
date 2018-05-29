@@ -4,7 +4,7 @@ services:
       image: rabbitmq:management
       restart: always
       ports:
-        - 15673:9019
+        - 15672:15672
   eureka:
       image: kaisagroup_eureka
       ports:

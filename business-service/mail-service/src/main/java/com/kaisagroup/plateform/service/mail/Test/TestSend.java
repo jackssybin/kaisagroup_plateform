@@ -38,7 +38,7 @@ public class TestSend {
         System.out.println("我发送了"+count++);
     }
 */
-    @Scheduled(fixedDelay = 2000)
+//    @Scheduled(fixedDelay = 2000)
     public void sendEveryMin() {
         String msg ="测试消息"+count++;
         System.out.println("定时发送开始"+count);

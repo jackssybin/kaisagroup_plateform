@@ -1,7 +1,7 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.hello;
+package com.kaisagroup.plateform.service.rabbitmq.hello;
 
 import com.alibaba.fastjson.JSONObject;
-import com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.model.User;
+import com.kaisagroup.plateform.service.rabbitmq.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

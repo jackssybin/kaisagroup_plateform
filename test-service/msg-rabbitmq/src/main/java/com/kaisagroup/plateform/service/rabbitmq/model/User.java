@@ -1,4 +1,4 @@
-package com.kaisagroup.plateform.service.boot.plateform.service.boot.plateform.service.rabbitmq.model;
+package com.kaisagroup.plateform.service.rabbitmq.model;
 
 import java.io.Serializable;
 
